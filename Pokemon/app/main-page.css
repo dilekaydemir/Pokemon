@@ -1,0 +1,7 @@
+StackLayout {
+    background-image: url("~/assets/img/pokemon.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+}
