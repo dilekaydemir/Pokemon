@@ -1,0 +1,34 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" xmlns:lv="nativescript-ui-listview" navigatingTo="onNavigatingTo" loaded="{{loaded}}">
+   <ActionBar title="Pokemon Kartları" icon="" >
+        <ActionItem tap="{{goBack}}">
+            <Label text="&#xf104; Geri" class="fa-solid" />
+        </ActionItem>
+    </ActionBar>
+   
+    
+    <!-- <ListView items="{{ cardList }}" 
+            itemTap="{{cardInfo($index)}}" 
+            loaded="{{ onListViewLoaded }}" 
+            class="list-group" id="listView">
+        <ListView.itemTemplate>
+            <StackLayout orientation="horizontal" width="auto" height="auto">
+                <Image src="{{ imageUrl }}" stretch="aspectFill"></Image>
+            </StackLayout>
+        </ListView.itemTemplate> 
+    </ListView>   -->
+
+    <lv:RadListView id="listview" 
+        class="list-group" 
+        items="{{ cardList }}"
+        itemTap="{{cardInfo}}"> 
+        <lv:RadListView.listViewLayout>
+            <lv:ListViewGridLayout scrollDirection="Vertical" spanCount="2" itemInsertAnimation="Scale"/>
+        </lv:RadListView.listViewLayout>
+        <lv:RadListView.itemTemplate>
+            <StackLayout class="list-group-item">
+                <Image src="{{ imageUrl }}" stretch="aspectFill"></Image>
+            </StackLayout>
+        </lv:RadListView.itemTemplate>
+    </lv:RadListView>
+    
+</Page>
